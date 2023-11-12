@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+       <div class="container">
+        <div class="row">
+            <div class="col-md-12 m-5">
+                <h1>LinkScrape</h1>
+            </div>
+        </div>
+        <div class="row m-5">
+            <div class="col-md-4">
+                <form method="POST" action="/">
+                    {% csrf_token %}
+                    <input class="form-control" name="site" type="text" id="site" placeholder="enter site address">
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-primary" type="submit">Scrape</button>
+                </div>
+                </form>
+                <div class="col-md-6">
+                    <a class="btn btn-warning" href="/delete">Delete</a>
+                </div>
+            
+        </div>
+ 
+ 
+           <div class="row m-5">
+               <div class="col-md-8">
+                    <table class="table">
+                            <thead class="thead-dark">
+                              <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Link</th>
+                                
+                              </tr>
+                            </thead>
+                            <tbody>
+                            {% for link in data %}
+                              <tr>
+                                
+                                <td>{{link.id}}</td>
+                                <td>{{link.name}}</td>
+                                <td>{{link.address}}</td>
+                              </tr>
+                              {% endfor %}
+                            </tbody>
+                          </table>
+                          
+               </div>
+           </div>
+       </div>
+   
+</body>
+</html>
+ 
