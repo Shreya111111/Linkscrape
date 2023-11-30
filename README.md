@@ -56,6 +56,11 @@ To contribute to this project, you need to fork the repository to your GitHub ac
         ```bash
         source myenv/bin/activate
         ```
+        
+        - To install all the requirements:
+         ```bash
+        pip3 install -r requirements.txt
+        ```
 
 5. **Run the development server:**
 
@@ -64,7 +69,13 @@ To contribute to this project, you need to fork the repository to your GitHub ac
     ```
 
 6. Visit `http://127.0.0.1:8000/` in your browser.
-7. ## Creating Branches and Adding Changes
+7. **Database Migrations:**
+    ```bash
+    python3 manage.py makemigrations
+    python3 manage.py migrate
+   ```
+
+9. ## Creating Branches and Adding Changes
 
 To contribute to the project, it's recommended to create a new branch for each feature or bug fix. Follow these steps:
 
@@ -109,6 +120,16 @@ To contribute to the project, it's recommended to create a new branch for each f
    - Click on "Compare & pull request" for the branch you just pushed.
    - Fill in the pull request details and submit it.
 
+## Contributions
+Open for contributions. Just clone and follow the installation. Create an issue, make changes and raise a PR detailing about the changes made.
+
+## Future Plans
+- Content based Filtering
+- UI/UX enhancement
+- AI driven tags
+- File extraction in CSV, JSON
+- Adding geolocation
+- Analytical Dashboard
 
 ## License
 
