@@ -8,7 +8,6 @@ LinkScrape is a dynamic application designed to extract and collect essential li
 [![Repo Size](https://img.shields.io/github/repo-size/Shreya111111/Linkscrape?color=orange)](https://github.com/Shreya111111/Linkscrape)
 [![Commits](https://img.shields.io/github/commit-activity/y/Shreya111111/Linkscrape?color=blue)](https://github.com/Shreya111111/Linkscrape/commits)
 
-Certainly! Here's the Markdown with badges included:
 
 # Tech Stack
 
