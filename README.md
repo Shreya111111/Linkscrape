@@ -33,7 +33,7 @@ To contribute to this project, you need to fork the repository to your GitHub ac
 2. **Navigate to the project directory:**
 
     ```bash
-    cd Linkscrape
+    cd myproject
     ```
 
 3. **Create a virtual environment:**
