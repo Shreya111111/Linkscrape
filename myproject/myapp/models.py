@@ -8,3 +8,4 @@ class Link(models.Model):
  
     address = models.CharField(max_length=1000,null=True,blank=True)
     name = models.CharField(max_length=1000,null=True,blank=True)
+    time =models.CharField(max_length=1000,null=True,blank=True)
