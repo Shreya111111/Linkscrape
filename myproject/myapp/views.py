@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 from django.http import HttpResponseRedirect, Http404
 import requests
 from .models import Link
+import datetime
 # Create your views here.
  
 def scrape(request):
@@ -11,18 +12,17 @@ def scrape(request):
  
         page = requests.get(site)
         soup = BeautifulSoup(page.text,'html.parser')
- 
-    
- 
+     
+
         for link in soup.find_all('a'):
             link_address = link.get('href')
             link_text = link.string
-            Link.objects.create(address=link_address,name=link_text)
+            Link.objects.create(address=link_address,name=link_text,time=datetime.datetime.now())
         return HttpResponseRedirect('/')
     else:
         data = Link.objects.all()
- 
- 
+
+
     return render(request,'myapp/result.html',{'data':data})
  
 def delete_get(request):
