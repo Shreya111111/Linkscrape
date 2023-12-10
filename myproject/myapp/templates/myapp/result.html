@@ -2,149 +2,197 @@
 <html lang="en">
 
 <head>
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <title>Divided Background with Curved Line</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            background: linear-gradient(to right, #fff 30%, #49108B 100%);
+        }
+    </style>
 </head>
 
 <body>
+    <div>
+        <header class="header">
+            <nav class="shadow navbar navbar-expand-lg navbar-light bg-white fixed-top" style="padding: 0%;">
+                <div class="container-fluid bg-warning" style="padding-top:1rem ; padding-bottom: 1rem;">
+                    <div class="d-flex align-items-centre text-center">
+                        <a class="py-1 navbar-brand" href="/">
+                            {% load static %}
+                            <img src="{% static 'img1.avif' %}" width="40" height="40">
+                        </a>
+                        <div class="" style="font-size: 1.5rem;margin:0.5rem">LinkScrape</div>
+                    </div>
+                </div>
+            </nav>
+        </header>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 m-5">
-        <h1>LinkScrape</h1>
-      </div>
+        <img src="{% static 'img6.png' %}" alt="" style="height: 25rem; position: absolute;  right: 2rem; top: 10rem;">
+        <main>
+            <div class="">
+                <div class="container " style="padding-bottom: 3%;margin-left:15rem">
+                    <div class="row" style="margin-top: 2rem;margin-bottom:2rem">
+                        <div class="col-md-12 m-5">
+                            <h2 class="text-dark" style="padding-top: 3rem;">Now</h2>
+                            <h1 class="text-dark fw-bold fs-1"
+                                style="padding-top: 2rem; font-family: 'Courier New', Courier, monospace; font-size: 5rem;font-weight: 900;">
+                                S C R A P E</h1>
+                            <h2 class="text-dark" style="padding-top:2rem ;">Any Website you want!</h2>
+                            <!-- <h1>Now Scrape</h1> -->
+
+                        </div>
+                    </div>
+                    <div class="row m-5">
+                        <div class="col-md-4">
+                            <form method="POST" action="/">
+                                {% csrf_token %}
+                                <input class="form-control" name="site" type="text" id="site"
+                                    placeholder="enter site address">
+                        </div>
+                        <div class="col-md-2">
+                            <button class="btn btn-warning" type="submit">Scrape</button>
+                        </div>
+                        </form>
+                        <div class="col-md-6">
+                            <a class="btn btn-danger" href="/delete">Delete</a>
+                        </div>
+
+                    </div>
+
+                    <!-- Filter and Sort Options -->
+                    <div class="row m-3">
+                        <div class="col-md-6">
+                            <!-- Dropdown for filtering by type -->
+                            <div class="form-group">
+                                <label for="filterType">Filter by Type:</label>
+                                <select id="filterType" class="form-control">
+                                    <option value="all">All</option>
+                                    <!-- Add more options based on your link types -->
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <!-- Dropdown for sorting options -->
+                            <div class="form-group">
+                                <label for="sortOptions">Sort by:</label>
+                                <select id="sortOptions" class="form-control">
+                                    <option value="relevance">Relevance</option>
+                                    <option value="time">Date&Time</option>
+                                    <!-- Add more options based on your sorting criteria -->
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Displaying Links -->
+                    <div class="row m-10" style="overflow-y: auto; height: 450px;">
+                        <div class="col-md-12">
+                            <table class="table  table-striped">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Link</th>
+                                        <th scope="col">Date&Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="linksTable">
+                                    {% for link in data %}
+                                    <tr>
+                                        <td>{{link.id}}</td>
+                                        <td>{{link.name}}</td>
+                                        <td>{{link.address}}</td>
+                                        <td>{{link.time}}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="position-relative z-index-10 d-print-none bg-dark">
+            <div class="py-6 bg-gray-200 text-muted">
+                <div class="container">
+                    <div class="row" style="padding-top: 3%;">
+                        <div class="text-white font-weight-bold" style="font-size: xx-large;">
+                            LinkScrape
+                        </div>
+                        <div class="text-white col-lg-4">Designed to extract and collect essential links from specific
+                            websites.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="py-4 fw-light bg-gray ">
+                <div class="container">
+                    <div class="align-items-centre row">
+                        <div class="text-center text-md-start col-md-6">
+                            <p class="text-warning text-sm mb-md-0">@2023, LinkScrape. All rights reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
-    <div class="row m-5">
-      <div class="col-md-4">
-        <form method="POST" action="/">
-          {% csrf_token %}
-          <input class="form-control" name="site" type="text" id="site" placeholder="enter site address">
-      </div>
-      <div class="col-md-2">
-        <button class="btn btn-primary" type="submit">Scrape</button>
-      </div>
-      </form>
-      <div class="col-md-6">
-        <a class="btn btn-warning" href="/delete">Delete</a>
-      </div>
 
-    </div>
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <!-- Filter and Sort Options -->
-    <div class="row m-3">
-      <div class="col-md-6">
-        <!-- Dropdown for filtering by type -->
-        <div class="form-group">
-          <label for="filterType">Filter by Type:</label>
-          <select id="filterType" class="form-control">
-            <option value="all">All</option>
-            <!-- Add more options based on your link types -->
-          </select>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <!-- Dropdown for sorting options -->
-        <div class="form-group">
-          <label for="sortOptions">Sort by:</label>
-          <select id="sortOptions" class="form-control">
-            <option value="relevance">Relevance</option>
-            <option value="time">Date&Time</option>
-            <!-- Add more options based on your sorting criteria -->
-          </select>
-        </div>
-      </div>
-    </div>
+    <script>
 
-    <!-- Displaying Links -->
-    <div class="row m-5">
-      <div class="col-md-8">
-        <table class="table">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Name</th>
-              <th scope="col">Link</th>
-              <th scope="col">Date&Time</th>
-            </tr>
-          </thead>
-          <tbody id="linksTable">
-            {% for link in data %}
-            <tr>
-              <td>{{link.id}}</td>
-              <td>{{link.name}}</td>
-              <td>{{link.address}}</td>
-              <td>{{link.time}}</td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-
-  <!-- Bootstrap JS and jQuery (required for Bootstrap's JavaScript plugins) -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-  <script>
-
-    function getTimeDifference(dateA, dateB) {
-      return new Date(dateA) - new Date(dateB);
-    }
-    // Filtering and sorting functionality
-    function filterAndSortLinks() {
-      const filterType = document.getElementById('filterType').value;
-      const sortOption = document.getElementById('sortOptions').value;
-      const linksTable = document.getElementById('linksTable');
-      const links = linksTable.getElementsByTagName('tr');
-
-      let linksArray = [];
-      for (let i = 1; i < links.length; i++) { // Start from index 1 to skip table header row
-        const linkType = links[i].getElementsByTagName('td')[2].innerText; // Assuming type is in the third column
-
-        // Show or hide based on the filter type
-        if (filterType === 'all' || linkType === filterType) {
-          links[i].style.display = '';
-        } else {
-          links[i].style.display = 'none';
+        function getTimeDifference(dateA, dateB) {
+            return new Date(dateA) - new Date(dateB);
         }
-        linksArray.push(links[i]);
-      }
+        // Filtering and sorting functionality
+        function filterAndSortLinks() {
+            const filterType = document.getElementById('filterType').value;
+            const sortOption = document.getElementById('sortOptions').value;
+            const linksTable = document.getElementById('linksTable');
+            const links = linksTable.getElementsByTagName('tr');
 
-      // Sorting logic - you can implement sorting here based on selected sort option
-      // Sorting is not implemented in this example
-      // print("LINKSARRAY:")
-      // print(linksArray)
-      if (sortOption == "Date&Time") {
-        linksArray.sort((a, b) => {
-          // const dateA=a.getEle
-          const dateA = a.getElementsByTagName('td')[3].innerText;
-          const dateB = b.getElementsByTagName('td')[3].innerText;
-          return getTimeDifference(dateA, dateB);
-        })
-      }
-      while (linksTable.firstChild) {
-        linksTable.removeChild(linksTable.firstChild);
-      }
+            let linksArray = [];
+            for (let i = 1; i < links.length; i++) { // Start from index 1 to skip table header row
+                const linkType = links[i].getElementsByTagName('td')[2].innerText; // Assuming type is in the third column
 
-      for (let i = 0; i < linksArray.length; i++) {
-        linksTable.appendChild(linksArray[i]);
-      }
-    }
+                // Show or hide based on the filter type
+                if (filterType === 'all' || linkType === filterType) {
+                    links[i].style.display = '';
+                } else {
+                    links[i].style.display = 'none';
+                }
+                linksArray.push(links[i]);
+            }
 
-    // Event listeners for changes in filter/sort options
-    document.getElementById('filterType').addEventListener('change', filterAndSortLinks);
-    document.getElementById('sortOptions').addEventListener('change', filterAndSortLinks);
-  </script>
+            // Sorting logic - you can implement sorting here based on selected sort option
+            if (sortOption == "Date&Time") {
+                linksArray.sort((a, b) => {
+                    const dateA = a.getElementsByTagName('td')[3].innerText;
+                    const dateB = b.getElementsByTagName('td')[3].innerText;
+                    return getTimeDifference(dateA, dateB);
+                })
+            }
+            while (linksTable.firstChild) {
+                linksTable.removeChild(linksTable.firstChild);
+            }
+
+            for (let i = 0; i < linksArray.length; i++) {
+                linksTable.appendChild(linksArray[i]);
+            }
+        }
+
+        // Event listeners for changes in filter/sort options
+        document.getElementById('filterType').addEventListener('change', filterAndSortLinks);
+        document.getElementById('sortOptions').addEventListener('change', filterAndSortLinks);
+    </script>
 </body>
 
 </html>
