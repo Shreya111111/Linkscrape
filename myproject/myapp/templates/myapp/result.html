@@ -15,7 +15,6 @@
         }
     </style>
 </head>
-
 <body>
     <div>
         <header class="header">
@@ -90,6 +89,15 @@
                         <div class="col-md-6">
                             <a class="btn btn-danger" href="/delete">Delete</a>
                         </div>
+                        {% if showexport %}
+                            {% if showexport > 0%}
+                            <div class="btn-group mt-3" role="group" aria-label="Export Buttons">
+                                <a href="{% url 'export' format='csv' %}" class="btn btn-success mr-2 rounded">Export as CSV</a>
+                                <a href="{% url 'export' format='json' %}" class="btn btn-primary mr-2 rounded">Export as JSON</a>
+                                <a href="{% url 'export' format='excel' %}" class="btn btn-success rounded">Export as Excel</a>
+                            </div>
+                            {% endif %}
+                        {% endif %}
 
                     </div>
 

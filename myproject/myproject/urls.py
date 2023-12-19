@@ -26,5 +26,5 @@ urlpatterns = [
     path('about_us/',views.about_us,name='about_us')
     #path('delete/<int:item_id>/', views.delete_item, name="delete"),
     #path('',views.clear, name="clear")
-
+    path('export/<str:format>/', views.export, name='export')
 ]
