@@ -40,3 +40,10 @@ def clear(request):
         return HttpResponseRedirect('/')  # Redirect to the homepage after clearing all links
     else:
         return render(request, 'myapp/result.html', {})  # Render an empty result page for GET requests
+
+def faqs(request):
+    return render(request,'myapp/faq.html',{})
+def about_us(request):
+    return render(request,'myapp/about_us.html',{})
+    # return HttpResponse('<h1>This is about me!.</h1>')  
+    # return HttpResponse('<h1> THis is about me!.</h1>')
