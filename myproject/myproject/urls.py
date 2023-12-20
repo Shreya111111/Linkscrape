@@ -22,6 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.scrape, name="scrape"),
     path('delete', views.delete_get, name='delete_get'),
+    path('faqs/',views.faqs,name='faqs'),
+    path('about_us/',views.about_us,name='about_us'),
     #path('delete/<int:item_id>/', views.delete_item, name="delete"),
     #path('',views.clear, name="clear")
     path('export/<str:format>/', views.export, name='export')

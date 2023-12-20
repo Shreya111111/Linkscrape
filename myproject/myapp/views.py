@@ -76,3 +76,10 @@ def export(request, format):
         return response
     else:
         raise Http404("Unsupported File Format")
+
+def faqs(request):
+    return render(request,'myapp/faq.html',{})
+def about_us(request):
+    return render(request,'myapp/about_us.html',{})
+    # return HttpResponse('<h1>This is about me!.</h1>')  
+    # return HttpResponse('<h1> THis is about me!.</h1>')

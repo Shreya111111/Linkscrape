@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Your Website</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom CSS for animations */
+        /* Add your custom CSS animations here */
+
+        /* Style changes to use Bootstrap warning color */
+        body,
+        html {
+            margin: 0;
+            background: linear-gradient(to bottom, #fff 0%, #F9E2AF 100%);
+        }
+
+        .jumbotron-warning {
+            background-color: #ffc107;
+        }
+
+        .card-warning {
+            border: 1px solid #ffc107;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
+            <div class="container-fluid d-flex"
+                style="padding-left: 18rem;padding-right: 18rem;padding-top: 2rem;padding-bottom: 2rem;">
+                <a class="py-1 navbar-brand" href="/">
+                    {% load static %}
+                    <img src="{% static 'img1.jpeg' %}" width="40" height="40">
+                </a>
+                <a class="navbar-brand text-dark" style="font-weight: bolder;font-size:2rem" href="/">LinkScrape</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class=" nav-link text-dark" style="font-weight: 900;font-size:1rem;margin: auto 1rem;"
+                                aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active  text-dark "
+                                style="font-weight: 900;font-size:1rem;margin: auto 1rem;" href="/about_us">About
+                                Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-dark "
+                                style="font-weight: 900;font-size:1rem;margin: auto 1rem;" href="/faqs   ">FAQs</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                            style="margin: auto 1rem;">
+                        <button class="btn btn-outline-success" type="submit" style="margin: auto 1rem;">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main content area -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center mb-4">About Us</h1>
+                <!-- Hero Section with Animation -->
+                <div class="jumbotron jumbotron-warning text-center" style=" animation: fadeIn 2s ease-in; ">
+                    <h2 style="font-size: 2.75rem;">
+                        Voilà!</h2>
+                    <p style="font-size: 1.5rem;">We created this website with ❤️ to scrape any website you
+                        want and use accordingly.</p>
+                    <!-- You can add an animated image or video here -->
+                </div>
+
+
+                <!-- About us description -->
+
+                <div class="mb-5">
+                    <p class="" style="text-align: center; font-size: 1.25rem; font-weight: bold;">Welcome to
+                        Linkscrape, your go-to platform for effortless link scraping and data extraction. Our
+                        mission is to simplify the process of gathering valuable information from the web, empowering
+                        users with powerful tools for web data extraction.</p>
+                    <p style="font-weight: bold; font-size: 1rem;">Key Features:
+                    <ul style="">
+                        <li>
+                            🕵️‍♂️ Effortless Link Scraping: Extract links from web pages with just a few clicks.
+                        </li>
+                        <li>
+                            📊 Data Insights: Gain valuable insights from the extracted data.
+                        </li>
+                        <li>
+                            🚀 User-Friendly Interface: Simple and intuitive for users of all levels.
+                        </li>
+                        <li>
+                            🔒 Privacy and Security: Your data security is our top priority.
+                        </li>
+                    </ul>
+                    </p>
+                    <p style="font-weight: bold;">
+                        How It Works:
+                    <ol>
+                        <li>
+                            Enter URLs: Paste the URLs you want to scrape.
+                        </li>
+                        <li>
+                            Customize Settings: Tailor the scraping process to your needs.
+                        </li>
+                        <li>
+                            Get Results: Access the extracted links and data instantly.
+                        </li>
+                    </ol>
+                    </p>
+                    <p style="font-weight: bold;">
+                        Who Can Benefit:
+                    <ul>
+                        <li>
+                            Researchers: Gather data for academic or professional research.
+                        </li>
+                        <li>
+                            Marketers: Extract links for SEO and competitive analysis.
+                        </li>
+                        <li>
+                            Developers: Streamline data collection for web development projects.
+                        </li>
+                        <li>
+                            Enthusiasts: Explore the web and gather information effortlessly.
+                        </li>
+                    </ul>
+                    </p>
+                    <p>
+                        Explore the possibilities with Linkscrape and transform the way you extract data from the
+                        internet. Have questions or suggestions? . Happy scraping! 🚀🌐
+                    </p>
+                </div>
+                <!-- Introduction Section -->
+                <div class="mb-5">
+                    <h3 style="text-align: center; font-size: 1.75rem;font-weight: 600;">Who Are We - Developers,
+                        Developers, Developers!</h3>
+                    <p class="lead" style="text-align: center;">We are dedicated to simplifying the web experience for
+                        all users.
+                        Our mission is to provide comprehensive solutions for efficient and effective web browsing.</p>
+                </div>
+                <!-- Team Members Section with Animations -->
+                <div class="row justify-content-center" style="margin: 7rem auto;">
+                    <div class="col-md-4 mb-4 justify-content-center" style="text-align: center;">
+                        <img src="{% static 'team_1.jpg' %}"
+                            style="border-radius: 50%; height: 15rem;width: 14rem;z-index:1 ">
+
+                        <div style="font-size: 1.75rem; font-weight: 600;text-align: center;">
+                            Shreya Nalawade
+                        </div>
+                        <div
+                            style="font-size: 1.5rem; font-weight: bold;color:grey;border-bottom: 5px solid black ; margin-bottom: 1rem;">
+                            Founder</div>
+                        <div style="font-weight: bold; text-align: center;">
+                            She is a 3rd year, undergraduate student pursuing Bachelor's of Engineering - BE, with major
+                            in Computer Science from the University of Mumbai.
+                            <br>
+                            Email -
+                            <div class="text-primary" style="display: inline;">
+                                shreyanalawade882@gmail.com
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Repeat the above structure for other team members -->
+                    <!-- Add hover effects or animations using CSS -->
+                    <div class="col-md-4 mb-4 justify-content-center" style="text-align: center;">
+                        <img src="{% static 'team_2.jpeg' %}"
+                            style="border-radius: 50%; height: 15rem;width: 13rem;z-index:1 ">
+
+                        <div style="font-size: 1.75rem; font-weight: 600;text-align: center;">
+                            Mohammad Touseef
+                        </div>
+                        <div
+                            style="font-size: 1.5rem; font-weight: bold;color:grey;border-bottom: 5px solid black ; margin-bottom: 1rem;">
+                            Contributor</div>
+                        <div style="font-weight: bold; text-align: center;">
+                            He is a final year Undergraduate student at IIT Jammu, purusing Bachelor's of Technology
+                            with major in Computer Science and Engineering.
+                            <br>
+                            Email -
+                            <div class="text-primary" style="display: inline;">
+                                touseef19md@gmail.com
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="position-relative z-index-10 d-print-none bg-dark">
+        <div class="py-6 bg-gray-200 text-muted">
+            <div class="container">
+                <div class="row">
+                    <div class="col text-white font-weight-bold" style="font-size: xx-large;margin: 2rem auto;">
+                        LinkScrape
+
+                    </div>
+                    <div class="col text-white col-lg-4" style="margin: 2rem auto;">
+                        Designed to extract and collect essential links from specific
+                        websites.
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="py-4 fw-light bg-gray ">
+            <div class="container">
+                <div class="align-items-centre row">
+                    <div class="text-start text-md-start col-md-6">
+                        <p class="text-warning text-sm mb-md-0">@2023, LinkScrape. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

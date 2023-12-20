@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            background: linear-gradient(to right, #fff 30%, #F9E2AF 100%);
+        }
+
+        .plus-btn {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            line-height: 38px;
+            text-align: center;
+            border-radius: 50%;
+            color: #fff;
+            /* Text color */
+            font-size: 36px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
+            <div class="container-fluid d-flex"
+                style="padding-left: 18rem;padding-right: 18rem;padding-top: 2rem;padding-bottom: 2rem;">
+                <a class="py-1 navbar-brand" href="/">
+                    {% load static %}
+                    <img src="{% static 'img1.jpeg' %}" width="40" height="40">
+                </a>
+                <a class="navbar-brand text-dark" style="font-weight: bolder;font-size:2rem" href="/">LinkScrape</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class=" nav-link text-dark" style="font-weight: 900;font-size:1rem;margin: auto 1rem;"
+                                aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active  text-dark "
+                                style="font-weight: 900;font-size:1rem;margin: auto 1rem;" href="/about_us">About
+                                Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-dark "
+                                style="font-weight: 900;font-size:1rem;margin: auto 1rem;" href="/faqs   ">FAQs</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                            style="margin: auto 1rem;">
+                        <button class="btn btn-outline-success" type="submit" style="margin: auto 1rem;">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+
+    <main>
+        <h1 style="text-align: center; font-weight: 900;font-size: 4rem;margin-top:3rem;margin-bottom:2rem">LinkScrape -
+            FAQs</h1>
+
+        <h3 style="text-align: center;font-weight: 500;font-size: 2.5rem; margin-bottom: 2rem;">Have a look, you might
+            get
+            something useful.</h3>
+
+        <div style="margin: 5rem auto 4rem; border-bottom: 5px solid black;width: 50%;"></div>
+
+        <div class="container " style="height: 500px;margin:30px auto;text-align: center;">
+            <div class="row justify-content-start" style="margin: 2rem 4rem;display: flex;flex-direction: row;">
+                <a class="btn btn-warning plus-btn" style="" data-bs-toggle="collapse" href="#collapse1" role="button"
+                    aria-expanded="false" aria-controls="collapseExample">
+                    +
+                </a>
+                <div style="font-size: 1.75rem;display: inline-block;width: auto;margin: auto 1rem ;">What does your
+                    website do?</div>
+                <div class="collapse" id="collapse1" style="margin: 2rem auto ;">
+                    <div class="card card-body" style="font-size: 1.25rem;">
+                        Our website extracts and lists all the URLs present on a given webpage.
+                        It provides a comprehensive collection of links for easier reference and navigation.
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-start" style="margin: 2rem 4rem;display: flex;flex-direction: row;">
+                <a class="btn btn-warning plus-btn" style="" data-bs-toggle="collapse" href="#collapse2" role="button"
+                    aria-expanded="false" aria-controls="collapse2">
+                    +
+                </a>
+                <div style="font-size: 1.75rem;display: inline-block;width: auto;margin: auto 1rem ;">How to use the
+                    platform?</div>
+                <div class="collapse" id="collapse2" style="margin: 2rem auto ;">
+                    <div class="card card-body" style="font-size: 1.25rem;">
+                        Enter the website whcih you want to scrape and click the
+                        scrape
+                        button. Wait and see the
+                        MAGIC!
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="row justify-content-start" style="margin: 2rem 4rem;display: flex;flex-direction: row;">
+                <a class="btn btn-warning plus-btn" style="" data-bs-toggle="collapse" href="#collapse3" role="button"
+                    aria-expanded="false" aria-controls="collapse3">
+                    +
+                </a>
+                <div style="font-size: 1.75rem;display: inline-block;width: auto;margin: auto 1rem ;">Can I scrape
+                    multiple
+                    URLs
+                    simultaneously?</div>
+                <div class="collapse" id="collapse3" style="margin: 2rem auto ;">
+                    <div class="card card-body" style="font-size: 1.25rem;">
+                        No you can't scrape multiple URLs simultaneously, but you can
+                        scrape them one by one. All of the scraped links will be collected.
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <!-- <div class="row justify-content-center" style="margin: 2rem auto;">
+                <div style="font-size: 2rem;">Are there any restrictions on the types of websites your tool can scrape?
+                </div>
+                <div style="font-size: 1.25rem;">Our tool can scrape URLs from most public websites. However, certain
+                    websites with strict security measures or complex dynamic content might pose challenges in
+                    extracting links.</div>
+            </div> -->
+
+            <div class="row justify-content-start" style="margin: 2rem 4rem;display: flex;flex-direction: row;">
+                <a class="btn btn-warning plus-btn" style="" data-bs-toggle="collapse" href="#collapse4" role="button"
+                    aria-expanded="false" aria-controls="collapse4">
+                    +
+                </a>
+                <div style="font-size: 1.75rem;display: inline-block;width: auto;margin: auto 1rem ;">Are there any
+                    restrictions on the types of websites your tool can scrape?</div>
+                <div class="collapse" id="collapse4" style="margin: 2rem auto ;">
+                    <div class="card card-body" style="font-size: 1.25rem;">
+                        Our tool can scrape URLs from most public websites. However, certain
+                        websites with strict security measures or complex dynamic content might pose challenges in
+                        extracting links.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="position-relative z-index-10 d-print-none bg-dark">
+        <div class="py-6 bg-gray-200 text-muted">
+            <div class="container">
+                <div class="row">
+                    <div class="col text-white font-weight-bold" style="font-size: xx-large;margin: 2rem auto;">
+                        LinkScrape
+
+                    </div>
+                    <div class="col text-white col-lg-4" style="margin: 2rem auto;">
+                        Designed to extract and collect essential links from specific
+                        websites.
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="py-4 fw-light bg-gray ">
+            <div class="container">
+                <div class="align-items-centre row">
+                    <div class="text-start text-md-start col-md-6">
+                        <p class="text-warning text-sm mb-md-0">@2023, LinkScrape. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
