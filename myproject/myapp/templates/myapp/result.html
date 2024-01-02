@@ -6,12 +6,18 @@
     <title>Divided Background with Curved Line</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+
     <style>
         body,
         html {
             height: 100%;
             margin: 0;
             background: linear-gradient(to right, #fff 30%, #F9E2AF 100%);
+        }
+        #fxo-widget-iframe {
+            width: 100vw;
         }
     </style>
 </head>
@@ -59,7 +65,6 @@
                 </div>
             </nav>
         </header>
-
         <img src="{% static 'img6.png' %}" alt="" style="height: 25rem; position: absolute;  right: 2rem; top: 15rem;">
         <main>
             <div class="">
@@ -186,9 +191,8 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+    <script src="https://widget.flowxo.com/embed.js" data-fxo-widget="eyJ0aGVtZSI6IiNkYmQ0MTEiLCJ3ZWIiOnsiYm90SWQiOiI2NThjM2NiOTU4NjQxZjAwMzVjNDc5MzIiLCJ0aGVtZSI6IiNkYmQ0MTEiLCJsYWJlbCI6IlNjcmFwaW5nIEhlbHAifSwid2VsY29tZVRleHQiOiJHb3QgYW55IHF1ZXN0aW9ucz8gQXNrIGhlcmUuIiwicG9wdXBIZWlnaHQiOiI2MCUifQ==" async defer></script>
     <script>
-
         function getTimeDifference(dateA, dateB) {
             return new Date(dateA) - new Date(dateB);
         }
